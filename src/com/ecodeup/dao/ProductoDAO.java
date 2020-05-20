@@ -111,6 +111,7 @@ public class ProductoDAO {
 		
 		try {
 			sql="SELECT * FROM productos";
+			statement=connection.prepareStatement(sql);
 			resultSet=statement.executeQuery(sql);
 			while (resultSet.next()) {
 				Producto p = new Producto();
