@@ -36,17 +36,18 @@ public class Consultas extends Conexion{
 		return false;
 	}
 	
-	public boolean registrar(String nombre, String apellido, String usuario, String contraseña ) {
+	public boolean registrar(String nombre, String apellido, String usuario, String contraseña, String correo ) {
 		
 		PreparedStatement pst = null;
 		
 		try {
-			String consulta = "insert into usuarios (nombre, apellido, usuario, pass) values(?,?,?,?)";
+			String consulta = "insert into usuarios (nombre, apellido, usuario, pass) values(?,?,?,?,?)";
 			pst = getConnection().prepareStatement(consulta);
 			pst.setString(1, nombre);
 			pst.setString(2, apellido);
 			pst.setString(3, usuario);
 			pst.setString(4, contraseña);
+			pst.setString(5, correo);
 			
 			if(pst.executeUpdate() == 1) {
 				return true;

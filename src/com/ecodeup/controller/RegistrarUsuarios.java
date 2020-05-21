@@ -25,9 +25,11 @@ public class RegistrarUsuarios extends HttpServlet {
 		String nombre = request.getParameter("nombre");
 		String apellido = request.getParameter("apellido");
 		String contraseña = request.getParameter("pass");
+		String correo = request.getParameter("correo");
+		
 		
 		Consultas co = new Consultas();
-		if(co.registrar(nombre, apellido, usuario, contraseña)) {
+		if(co.registrar(nombre, apellido, usuario, contraseña, correo)) {
 				response.sendRedirect("index.jsp");
 			}else {
 				response.sendRedirect("registro.jsp");

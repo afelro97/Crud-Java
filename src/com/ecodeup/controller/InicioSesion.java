@@ -24,6 +24,7 @@ public class InicioSesion extends HttpServlet {
 		
 		String usuario = request.getParameter("usuario");
 		String contraseña = request.getParameter("pass");
+		String correo = request.getParameter("correo");
 		
 		Consultas co = new Consultas();
 		if(co.autenticacion(usuario, contraseña)) { //cambiar a inicio de sesion de la app
